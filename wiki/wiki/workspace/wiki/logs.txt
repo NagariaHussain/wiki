@@ -1,0 +1,89 @@
+> (Install Apps - Wiki) step on deploy
+
+------ NOT WORKING ---------
+
+bench get-app file:///home/frappe/context/apps/wiki --cache-key 443afe49af4186fff3a5f6cd3ff968b8d258b9db --compress-artifacts
+Bench app-cache: extracting wiki from /home/frappe/.cache/bench/apps/wiki.443afe49af4186fff3a5f6cd3ff968b8d258b9db.md5-f27dcec059f8f7bcc3dab1705c47311f.tgz
+Bench app-cache: extraction succeeded for wiki
+Ignoring dependencies of wiki. To install dependencies use --resolve-deps
+Installing wiki
+$ /home/frappe/frappe-bench/env/bin/python -m pip install --quiet --upgrade -e /home/frappe/frappe-bench/apps/wiki
+$ bench build --app wiki
+Linking /home/frappe/frappe-bench/apps/frappe/frappe/public to ./assets/frappe
+/home/frappe/frappe-bench/apps/frappe/node_modules to ./assets/frappe/node_modules
+/home/frappe/frappe-bench/apps/wiki/wiki/public to ./assets/wiki
+/home/frappe/frappe-bench/apps/wiki/node_modules to ./assets/wiki/node_modules
+Application Assets Linked
+
+
+yarn run v1.22.22
+$ node esbuild --production --apps wiki --using-cached
+ WARN  Cannot connect to redis_cache to update assets_json
+ DONE  Total Build Time: 477.383ms
+Done in 2.00s.
+Compiling translations for wiki
+$ supervisorctl restart frappe:
+unix:///tmp/supervisor.sock no such file
+WARN: restarting supervisor group `frappe:` failed. Use `bench restart` to retry.
+INFO: A newer version of bench is available: 5.22.6 → 5.23.0
+
+
+--------- WORKING ----
+
+bench get-app file:///home/frappe/context/apps/wiki --cache-key a6e2cfd70e3c6ae774ac6ed84e6141873efdff93 --compress-artifacts
+Getting wiki
+$ git clone file:///home/frappe/context/apps/wiki  --depth 1 --origin upstream
+Cloning into 'wiki'...
+Ignoring dependencies of file:///home/frappe/context/apps/wiki. To install dependencies use --resolve-deps
+Installing wiki
+$ /home/frappe/frappe-bench/env/bin/python -m pip install --quiet --upgrade -e /home/frappe/frappe-bench/apps/wiki
+$ yarn install --check-files
+yarn install v1.22.22
+[1/4] Resolving packages...
+[2/4] Fetching packages...
+[3/4] Linking dependencies...
+[4/4] Building fresh packages...
+Done in 2.01s.
+$ bench build --app wiki
+Linking /home/frappe/frappe-bench/apps/frappe/frappe/public to ./assets/frappe
+/home/frappe/frappe-bench/apps/frappe/node_modules to ./assets/frappe/node_modules
+/home/frappe/frappe-bench/apps/wiki/wiki/public to ./assets/wiki
+/home/frappe/frappe-bench/apps/wiki/node_modules to ./assets/wiki/node_modules
+Application Assets Linked
+
+
+yarn run v1.22.22
+$ node esbuild --production --apps wiki --run-build-command
+Browserslist: caniuse-lite is outdated. Please run:
+  npx update-browserslist-db@latest
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+File                                                        Size
+
+wiki/dist/js/
+└─ wiki.bundle.FT3D5AOU.js                                  560.90 Kb
+
+wiki/dist/css/
+├─ contributions.bundle.MOWJKMZM.css                        0.99 Kb
+├─ edit_wiki.bundle.B22GLCRG.css                            22.12 Kb
+└─ wiki.bundle.GZ7BAZSM.css                                 49.69 Kb
+
+wiki/dist/css-rtl/
+├─ contributions.bundle.XH64UQBY.css                        0.99 Kb
+├─ edit_wiki.bundle.G7VU7WJL.css                            22.12 Kb
+└─ wiki.bundle.KQ4IKBDE.css                                 49.70 Kb
+
+ DONE  Total Build Time: 1.604s
+
+ WARN  Cannot connect to redis_cache to update assets_json
+ WARN  Cannot connect to redis_cache to update assets_json
+ WARN  Cannot connect to redis_cache to update assets_json
+Done in 2.48s.
+Compiling translations for wiki
+$ supervisorctl restart frappe:
+unix:///tmp/supervisor.sock no such file
+WARN: restarting supervisor group `frappe:` failed. Use `bench restart` to retry.
+Bench app-cache: caching wiki (compressed)
+Required frappe version not set in pyproject.toml, please refer: https://github.com/frappe/bench/issues/1524
+Bench app-cache: caching succeeded for wiki as /home/frappe/.cache/bench/apps/wiki.a6e2cfd70e3c6ae774ac6ed84e6141873efdff93.md5-2f5d15b6076820ffe15889009a09e402.tgz
+INFO: A newer version of bench is available: 5.22.6 → 5.23.0
+
