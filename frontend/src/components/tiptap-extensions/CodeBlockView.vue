@@ -37,7 +37,7 @@ export default {
           label: language,
           value: language,
         }))
-        .concat([{ label: 'html', value: 'xml' }])
+        .concat([{ label: 'html', value: 'html' }])
         .sort((a, b) => a.label.localeCompare(b.label))
     },
   },
