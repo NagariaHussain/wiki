@@ -45,19 +45,30 @@ Cypress specs live under `cypress/e2e/` (`wiki.cy.js`, `wiki_sidebar.cy.js`) and
 runner is configured in `cypress.config.js`. Drop `--headless` to open the
 interactive Cypress runner instead of running headlessly.
 
-## Linting
+## Code Style
 
-Linting is run by [`.github/workflows/linters.yml`](.github/workflows/linters.yml)
-via [pre-commit](https://pre-commit.com). To reproduce it locally:
+Code style and linting are enforced by
+[`.github/workflows/linters.yml`](.github/workflows/linters.yml) via
+[pre-commit](https://pre-commit.com), configured in `.pre-commit-config.yaml`. The
+easiest way to match CI is to install the git hook so checks run on every commit, or
+to run all hooks against the whole tree:
 
 ```bash
-pre-commit install      # one-time setup
+pre-commit install        # one-time setup; runs the hooks on each commit
 pre-commit run --all-files
 ```
 
+The hooks wrap the same tools you can also run directly:
+
+```bash
+ruff check --fix .        # lint Python and apply safe fixes
+ruff format .             # format Python
+```
+
 Python code style is configured in `pyproject.toml` under `[tool.ruff]`
-(line length 110, tab indentation, double-quote style). Commit messages are checked
-against Conventional Commits with `commitlint`.
+(line length 110, tab indentation, double-quote style). JavaScript is formatted with
+[Prettier](https://prettier.io) via the same pre-commit run. Commit messages are
+checked against Conventional Commits with `commitlint`.
 
 ---
 
