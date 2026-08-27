@@ -30,3 +30,5 @@ screenshots/
 # real template with live dials. Handy while iterating, not something to ship.
 wiki/www/og_playground.py
 wiki/www/og_playground.html
+# Built by frontend/prototype/inline.mjs — 5MB of inlined bundle, not source.
+frontend/prototype/space-image-generator.html

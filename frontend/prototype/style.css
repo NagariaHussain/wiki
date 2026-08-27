@@ -1,0 +1,15 @@
+@import 'frappe-ui/style.css';
+
+html[data-theme='dark'] {
+	color-scheme: dark;
+}
+html[data-theme='light'] {
+	color-scheme: light;
+}
+
+/* Same rationale as the app's index.css: reka-ui's Presence can lose the
+   leave-animation end event on rapid open/close and strand a ghost overlay. */
+.dialog-overlay[data-state],
+.dialog-content[data-state] {
+	animation: none !important;
+}
