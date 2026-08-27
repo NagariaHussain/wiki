@@ -64,6 +64,9 @@
 				<Button variant="outline" :loading="uploadingLogo" @click="pickLogo">
 					{{ logo ? __('Replace') : __('Upload') }}
 				</Button>
+				<Button variant="outline" @click="showImageGenerator = true">
+					{{ __('Generate') }}
+				</Button>
 				<Button v-if="logo" variant="ghost" theme="red" @click="removeLogo">
 					{{ __('Remove') }}
 				</Button>
@@ -94,10 +97,17 @@
 				{{ __('Clone') }}
 			</Button>
 		</SettingsRow>
+
+		<SpaceImageDialog
+			v-model="showImageGenerator"
+			:space-name="space.doc?.space_name || ''"
+			@select="saveLogo"
+		/>
 	</div>
 </template>
 
 <script setup>
+import SpaceImageDialog from '@/components/SpaceImageDialog.vue';
 import { Button, SettingsRow, Switch, toast, useFileUpload } from 'frappe-ui';
 import { ref, watch } from 'vue';
 
@@ -119,6 +129,7 @@ const updatingTabsSetting = ref(false);
 
 const logo = ref('');
 const uploadingLogo = ref(false);
+const showImageGenerator = ref(false);
 const logoInput = ref(null);
 const fileUploader = useFileUpload();
 

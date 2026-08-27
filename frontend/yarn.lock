@@ -285,6 +285,43 @@
     style-mod "^4.1.0"
     w3c-keyname "^2.2.4"
 
+"@dicebear/core@^9.4.2":
+  version "9.4.3"
+  resolved "https://registry.yarnpkg.com/@dicebear/core/-/core-9.4.3.tgz#e450781e4ef86402cb59702447f92eb29fbeb6ad"
+  integrity sha512-9ITrQI57k3p5hKuU8HZJ1d0kPdrmTKEJDOdlKQ8CpaChbtmnD1R+dtWmNz5IesYThXM8F64pJ0ZvJ2rsY8Hciw==
+  dependencies:
+    "@types/json-schema" "^7.0.15"
+
+"@dicebear/glass@^9.4.2":
+  version "9.4.2"
+  resolved "https://registry.yarnpkg.com/@dicebear/glass/-/glass-9.4.2.tgz#608d93350c39158361c3b3c2ae392a179c3b20dd"
+  integrity sha512-z5qUogHQ1b6UJ2zCqT848mU2U9DKbVDhiX6GPDjD7tYLisCCJVisH9p6WyNdHvflUd4SHkA6gRqVJIh2v2HnTA==
+
+"@dicebear/icons@^9.4.2":
+  version "9.4.2"
+  resolved "https://registry.yarnpkg.com/@dicebear/icons/-/icons-9.4.2.tgz#92d32d8d1150a786833424f2c323207e3e4e6a2e"
+  integrity sha512-QSMMz0NA03ypSGhXC8HQX8FSj8lYT+/5yqH+/N03OH2IjL0q7wwGZ7nqsrtlRp76O5WqMTwGfSbTUUYPjFr+Xw==
+
+"@dicebear/identicon@^9.4.2":
+  version "9.4.2"
+  resolved "https://registry.yarnpkg.com/@dicebear/identicon/-/identicon-9.4.2.tgz#b72f8fb9874218598b12b03526dcadd051b33849"
+  integrity sha512-JVDSmZsv11mSWqwAktK5x9Bslht2xY3TFUn8xzu6slAYe1Z7hEXZ76eb+UJ6F4qEzdwZ7xPWzAS6Nb0Y3A0pww==
+
+"@dicebear/initials@^9.4.2":
+  version "9.4.2"
+  resolved "https://registry.yarnpkg.com/@dicebear/initials/-/initials-9.4.2.tgz#6eab64a9913e57dac41a5a508f2fe68c7eb23c1b"
+  integrity sha512-yePuIUasmwtl9IrtB6rEzE/zb5fImKP/neW0CdcTC2MwLgMuP1GLHEGRgg1zI8exIh+PMv1YdLGyyUuRTE2Qpw==
+
+"@dicebear/rings@^9.4.2":
+  version "9.4.2"
+  resolved "https://registry.yarnpkg.com/@dicebear/rings/-/rings-9.4.2.tgz#073a4a7b9c9782db8f767023cbbcdaa1024cc59d"
+  integrity sha512-Pc3ymWrRDQPJFNrbbLt7RJrzGvUuuxUiDkrfLhoVE+B6mZWEL1PC78DPbS1yUWYLErJOpJuM2GSwXmTbVjWf+g==
+
+"@dicebear/shapes@^9.4.2":
+  version "9.4.2"
+  resolved "https://registry.yarnpkg.com/@dicebear/shapes/-/shapes-9.4.2.tgz#a3509c51fe9eca05e09a499be42536b93461b10b"
+  integrity sha512-AFL6jAaiLztvcqyq+ds+lWZu6Vbp3PlGWhJeJRm842jxtiluJpl6r4f6nUXP2fdMz7MNpDzXfLooQK9E04NbUQ==
+
 "@esbuild/aix-ppc64@0.21.5":
   version "0.21.5"
   resolved "https://registry.yarnpkg.com/@esbuild/aix-ppc64/-/aix-ppc64-0.21.5.tgz#c7184a326533fcdf1b8ee0733e21c713b975575f"
@@ -1322,6 +1359,11 @@
   integrity sha512-WPs+bbQw5aCj+x6laNGWLH3wviHtoCv/P3+otBhbOhJgG8qtpdAMlTCxLtsTWA7LH1Oh/bFCHsBn0TPS5m30EQ==
   dependencies:
     "@types/unist" "*"
+
+"@types/json-schema@^7.0.15":
+  version "7.0.15"
+  resolved "https://registry.yarnpkg.com/@types/json-schema/-/json-schema-7.0.15.tgz#596a1747233694d50f6ad8a7869fcb6f56cf5841"
+  integrity sha512-5+fP8P8MFNC+AyZCDxrB2pkZFPGzqQWUzpSeuuVLvm8VMcorNYavBqoFcxK8bQz4Qsbn4oUEEem4wDLfcysGHA==
 
 "@types/mdast@^4.0.0":
   version "4.0.4"
